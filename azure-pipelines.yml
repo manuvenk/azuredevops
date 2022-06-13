@@ -19,4 +19,10 @@ stages:
           - script: echo "Hello World"
 
 
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: $(Build.ArtifactStagingDirectory)/index.html
+              ArtifactName: test
+
+
 
