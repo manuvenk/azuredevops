@@ -1,16 +1,22 @@
 # Pipeline to run release pipeline test.
 
 trigger:
-- main
+  - main
 
-pool:
-  vmImage: ubuntu-latest
+pool: Default
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+stages:
+  
+  - stage: stage1
+    displayName: Stage One
+    jobs:
+      
+      - job: job1
+        displayName: job one
+        steps:
+        
+          - script: echo "Hello World"
+
+
+
