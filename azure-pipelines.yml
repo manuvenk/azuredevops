@@ -16,12 +16,12 @@ stages:
         displayName: job one
         steps:
         
-          - script: echo "Hello World"
+          - script: echo "Hello World" >> index.html
 
 
           - task: PublishBuildArtifacts@1
             inputs:
-              PathtoPublish: $(Build.ArtifactStagingDirectory)/index.html
+              PathtoPublish: $(Build.SourcesDirectory)/index.html
               ArtifactName: test
 
 
